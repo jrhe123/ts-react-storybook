@@ -1,0 +1,4 @@
+run:
+1. tsc xxx.ts
+    node xxx.js
+2. ts-node xxx.ts
