@@ -75,15 +75,15 @@ $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
 // link
-$link-color:                              $primary !default;
-$link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 15%) !default;
-$link-hover-decoration:                   underline !default;
+$link-color:                  $primary !default;
+$link-decoration:             none !default;
+$link-hover-color:            darken($link-color, 15%) !default;
+$link-hover-decoration:       underline !default;
 
 // body
-$body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
-$body-text-align:           null !default;
+$body-bg:                     $white !default;
+$body-color:                  $gray-900 !default;
+$body-text-align:             null !default;
 
 // spacing
 $spacer: 1rem !default;
@@ -96,7 +96,7 @@ $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 
 // paragraphs
-$paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:     1rem !default;
 
 // heading list hr
 $headings-margin-bottom:      $spacer / 2 !default;
@@ -153,9 +153,9 @@ $mark-bg:                     #fcf8e3 !default;
 $hr-margin-y:                 $spacer !default;
 
 // code
-$code-font-size:                    $small-font-size !default;
-$code-color:                        $pink !default;
-$pre-color:                         null !default;
+$code-font-size:              $small-font-size !default;
+$code-color:                  $pink !default;
+$pre-color:                   null !default;
 
 // options
 $enable-pointer-cursor-for-buttons:           true !default;
