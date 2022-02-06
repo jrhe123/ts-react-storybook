@@ -1,3 +1,4 @@
 {
-  "lib": ["ES6", "DOM"]
+  "lib": ["ES6", "DOM"],
+  "include": ["**/*"]
 }
