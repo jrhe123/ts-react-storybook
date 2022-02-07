@@ -2,23 +2,24 @@ import React, { useState } from "react";
 
 import Button, { ButtonType, ButtonSize } from "./components/Button/button";
 import Alert, { AlertType } from "./components/Alert/alert";
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
 
 function App() {
   const [toggle, setToggle] = useState(true);
   return (
     <div>
-      {toggle && (
-        <Alert
-          alertType={AlertType.Danger}
-          title="this is my title"
-          message="this is my message"
-          onClick={() => {
-            setToggle(!toggle);
-          }}
-        >
-          this is my children
-        </Alert>
-      )}
+      <Menu
+        mode="vertical"
+        defaultIndex={0}
+        onSelect={(index) => console.log(index)}
+      >
+        <MenuItem index={0}>link 1</MenuItem>
+        <MenuItem index={1} disabled>
+          link 2
+        </MenuItem>
+        <MenuItem index={2}>link 3</MenuItem>
+      </Menu>
       <Button className="abc">default</Button>
       <Button disabled>default disabled</Button>
       <Button btnType={ButtonType.Primay} size={ButtonSize.Large}>
@@ -45,6 +46,18 @@ function App() {
       >
         link disabled
       </Button>
+      {toggle && (
+        <Alert
+          alertType={AlertType.Danger}
+          title="this is my title"
+          message="this is my message"
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+        >
+          this is my children
+        </Alert>
+      )}
     </div>
   );
 }
