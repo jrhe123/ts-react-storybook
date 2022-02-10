@@ -4,6 +4,7 @@ import Button, { ButtonType, ButtonSize } from "./components/Button/button";
 import Alert, { AlertType } from "./components/Alert/alert";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -11,14 +12,17 @@ function App() {
     <div>
       <Menu
         mode="vertical"
-        defaultIndex={0}
+        defaultIndex="0"
+        defaultOpenSubMenus={["3"]}
         onSelect={(index) => console.log(index)}
       >
-        <MenuItem index={0}>link 1</MenuItem>
-        <MenuItem index={1} disabled>
-          link 2
-        </MenuItem>
-        <MenuItem index={2}>link 3</MenuItem>
+        <MenuItem>link 1</MenuItem>
+        <MenuItem disabled>link 2</MenuItem>
+        <MenuItem>link 3</MenuItem>
+        <SubMenu title="dropdown">
+          <MenuItem>link 4</MenuItem>
+          <MenuItem>link 5</MenuItem>
+        </SubMenu>
       </Menu>
       <Button className="abc">default</Button>
       <Button disabled>default disabled</Button>
