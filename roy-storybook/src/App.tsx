@@ -2,14 +2,25 @@ import React, { useState } from "react";
 
 import Button, { ButtonType, ButtonSize } from "./components/Button/button";
 import Alert, { AlertType } from "./components/Alert/alert";
+
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import Icon from "./components/Icon/icon";
+
+import Transition from "./components/Transition/transition";
+
+library.add(fas);
+
 function App() {
   const [toggle, setToggle] = useState(true);
+  const [show, setShow] = useState(false);
   return (
     <div>
+      <Icon icon="arrow-down" theme="warning" size="10x" />
       <Menu
         mode="vertical"
         defaultIndex="0"
@@ -50,18 +61,43 @@ function App() {
       >
         link disabled
       </Button>
-      {toggle && (
-        <Alert
-          alertType={AlertType.Danger}
-          title="this is my title"
-          message="this is my message"
-          onClick={() => {
-            setToggle(!toggle);
-          }}
-        >
-          this is my children
-        </Alert>
-      )}
+      <Alert
+        alertType={AlertType.Danger}
+        title="this is my title"
+        message="this is my message"
+        onClick={() => {
+          setToggle(!toggle);
+        }}
+      >
+        this is my children
+      </Alert>
+      <Button
+        size={ButtonSize.Large}
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        Toggle
+      </Button>
+      <Transition in={show} timeout={300} animation="zoom-in-left">
+        <div>
+          <p>123</p>
+          <p>123</p>
+          <p>123</p>
+        </div>
+      </Transition>
+      <Transition in={show} timeout={300} animation="zoom-in-left" wrapper>
+        <Button size={ButtonSize.Large} btnType={ButtonType.Primay}>
+          testBtn
+        </Button>
+      </Transition>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

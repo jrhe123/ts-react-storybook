@@ -27,8 +27,8 @@ const Alert: React.FC<NativeAlertProps> = (props) => {
   });
   return (
     <div className={classes}>
-      {title && <p>{title}</p>}
-      {message && <p>{message}</p>}
+      <p>{title}</p>
+      <p>{message}</p>
       <button {...restProps}>X</button>
       {children}
     </div>
